@@ -55,7 +55,7 @@ user@token2.onmicrosoft.com,60234567,1234567890abcdef1234567890abcdef,30,Token2,
 
 ```json
 {
-    "@context": "#\$delta",
+    "@context": "#$delta",
     "value": [
         {
             "@contentId": 1,
