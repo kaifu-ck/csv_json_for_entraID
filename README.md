@@ -29,20 +29,13 @@ This PowerShell script converts a CSV file containing data for OATH TOTP Hardwar
 
 ## Usage
 
-1. Edit the script to specify the file paths:
+1. Run the script in PowerShell:
 
    ```powershell
-   $csvFilePath = "path/to/your/csvfile.csv"  # Path to your input CSV file
-   $jsonFilePath = "path/to/output.json"        # Path for the output JSON file
+   .\CsvToJson.ps1 -csvFilePath "path/to/your/csvfile.csv"
    ```
 
-2. Run the script in PowerShell:
-
-   ```powershell
-   .\CsvToJson.ps1
-   ```
-
-3. The JSON file will be generated at the specified location.
+2. The JSON file will be generated at the specified location.
 
 ## Example Input (CSV)
 
@@ -92,3 +85,4 @@ This project is licensed under the MIT License. Feel free to use and modify as n
  
 CSV for Azure AD / Entra ID - https://www.token2.com/site/page/classic-hardware-tokens-for-office-365-azure-cloud-multi-factor-authentication
 JSON for Azure AD / Entra ID - https://www.token2.com/site/page/classic-hardware-tokens-for-entra-id-mfa-graph-api-method-with-self-service-and-sha-256-tokens-support
+

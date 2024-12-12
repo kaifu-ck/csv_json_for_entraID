@@ -1,5 +1,20 @@
-$csvFilePath = "csv.csv"  # Update with your CSV file path
-$jsonFilePath = "json.json"        # Update with your desired JSON output file path
+[CmdletBinding()]
+
+Param(
+    [Parameter(Mandatory=$true)][System.IO.FileInfo]$csvFilePath,
+    [Parameter()][System.IO.FileInfo]$jsonFilePath
+    )
+
+# $csvFilePath = "csv.csv"  # Update with your CSV file path
+# $jsonFilePath = "json.json" # Update with your desired JSON output file path
+
+# Create the json file in the csv file parent directory with the same name if none passed as parameter.
+if ( [string]::IsNullOrEmpty($jsonFilePath) ){
+    $parentPath = Split-Path $csvFilePath -Parent
+    $name = "{0}.json" -f $([IO.FileInfo]$(Split-Path $csvFilePath -Leaf)).BaseName
+}
+
+$jsonFilePath = (Join-Path $parentPath $name)
 
 # Read the CSV file into an array of objects
 $csvData = Import-Csv -Path $csvFilePath
@@ -38,3 +53,4 @@ $jsonOutput = $jsonData | ConvertTo-Json -Depth 10
 Set-Content -Path $jsonFilePath -Value $jsonOutput
 
 Write-Host "JSON file generated at: $jsonFilePath"
+
