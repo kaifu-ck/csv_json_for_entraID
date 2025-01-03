@@ -38,6 +38,7 @@ foreach ($row in $csvData) {
         "model" = $row."model"
         "secretKey" = $row."secret key"
         "timeIntervalInSeconds" = [int]$row."timeinterval"
+        #Change this to hmacsha256 if your seeds are SHA256-hashed
         "hashFunction" = "hmacsha1"
     }
     $contentId++
