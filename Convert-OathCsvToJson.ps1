@@ -4,7 +4,7 @@
 .LINK
     https://github.com/token2/csv_json_for_entraID/blob/main/README.md
 .EXAMPLE
-    .\CsvToJson.ps1 -csvFilePath "path/to/your/csvfile.csv"
+    .\Convert-OathCsvToJson.ps1 -csvFilePath "path/to/your/csvfile.csv"
 #>
 [CmdletBinding()]
 
