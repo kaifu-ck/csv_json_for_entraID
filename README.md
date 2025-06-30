@@ -17,7 +17,7 @@ This PowerShell script converts a CSV file containing data for OATH TOTP Hardwar
   - `upn`
   - `serial number`
   - `secret key`
-  - `timeinterval`
+  - `time interval`
   - `manufacturer`
   - `model`
 
@@ -25,14 +25,14 @@ This PowerShell script converts a CSV file containing data for OATH TOTP Hardwar
 
 1. Clone this repository or download the script file.
 2. Ensure that PowerShell is installed on your system.
-3. Save the script as `CsvToJson.ps1`.
+3. Save the script as `Convert-OathCsvToJson.ps1`.
 
 ## Usage
 
 1. Run the script in PowerShell:
 
    ```powershell
-   .\CsvToJson.ps1 -csvFilePath "path/to/your/csvfile.csv"
+   .\Convert-OathCsvToJson.ps1 -csvFilePath "path/to/your/csvfile.csv"
    ```
 
 2. The JSON file will be generated at the specified location.
@@ -40,7 +40,7 @@ This PowerShell script converts a CSV file containing data for OATH TOTP Hardwar
 ## Example Input (CSV)
 
 ```csv
-upn,serial number,secret key,timeinterval,manufacturer,model
+upn,serial number,secret key,time interval,manufacturer,model
 user@token2.onmicrosoft.com,60234567,1234567890abcdef1234567890abcdef,30,Token2,c202
 ```
 
@@ -73,9 +73,6 @@ user@token2.onmicrosoft.com,60234567,1234567890abcdef1234567890abcdef,30,Token2,
 
 - **Error: File not found**:
   Verify the file paths for `$csvFilePath` and `$jsonFilePath`.
-
-- **Empty output**:
-  Ensure the CSV file has valid data and headers.
 
 ## License
 
